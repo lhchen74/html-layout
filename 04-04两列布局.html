@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+    * 优点：浏览器兼容性好
+    * 缺点：会存在表格的一些问题    
+    */
+    .parent {
+        /* 表格的单元格格宽度会自动分配 */
+        display: table;
+        table-layout: fixed; /* ??? */
+
+        width: 100%;
+    }
+
+    .left,
+    .right {
+        height: 300px;
+
+        display: table-cell;
+    }
+
+    .left {
+        /* 定宽 */
+        width: 300px;
+        background-color: #ff0000; 
+    }
+
+    .right {
+        background-color: #ccc;
+    }
+
+</style>
+
+<body>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right"> </div>
+    </div>
+</body>
+
+</html>

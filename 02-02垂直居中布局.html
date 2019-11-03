@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+     * 优点：父级元素是否脱离文档流，不影响子级元素居中效果
+     * 缺点：transform 是 css3 中新增属性，浏览器支持情况不好
+     */
+    .parent {
+        width: 200px;
+        height: 600px;
+        background-color: #ccc;
+
+        position: relative;
+    }
+
+    .child {
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
+
+<body>
+    <div class="parent">
+        居中布局
+        <div class="child"></div>
+    </div>
+</body>
+
+</html>

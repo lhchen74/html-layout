@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+    * 优点：实现方式简单
+    *      右列不依赖于左列的宽度
+    *      定宽元素浮动与自适应元素不浮动导致浏览器兼容性问题, BFC 模式不存在这个问题 ???
+    * 缺点：overflow 属性不仅解决了两列布局问题，同时设置了内容溢出    
+    */
+    .left, .right {
+        height: 300px;
+    }
+
+    .left {
+        /* 定宽 */
+        width: 300px;
+        background-color: #ff0000;
+
+        float: left;
+    }
+
+    .right {
+        background-color: #ccc;
+        
+
+        /* 开启 BFC 模式 - 当前元素的内部环境与外界完全隔离 ??? */
+        overflow: hidden;
+    }
+
+</style>
+<body>
+   <div class="left"></div>
+   <div class="right">
+   </div>
+</body>
+</html>

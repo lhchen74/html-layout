@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+    * 优点：实现方式简单
+    * 缺点：自适应元素的 margin 属性元素需要与定宽元素的宽度保持一致
+    *      定宽元素浮动与自适应元素不浮动导致浏览器兼容性问题
+    *      自适应元素的子元素不能使用 clear: both
+    */
+    .left, .right {
+        height: 300px;
+    }
+
+    .left {
+        /* 定宽 */
+        width: 300px;
+        background-color: #ff0000;
+
+        float: left;
+    }
+
+    .right {
+        background-color: #ccc;
+
+        margin-left: 300px;
+    }
+
+    /*
+    .inner {
+        height: 300px;
+        background-color: green;
+
+        clear: both;
+    }
+    */
+</style>
+<body>
+   <div class="left"></div>
+   <div class="right">
+       <div class="inner"></div>
+   </div>
+</body>
+</html>

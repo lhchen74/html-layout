@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+     * 优点：浏览器兼容性好
+     * 缺点：vertical-align 会导致父级元素中的文本也会垂直居中对齐
+     */
+    .parent {
+        width: 200px;
+        height: 600px;
+        background-color: #ccc;
+
+
+        /**
+         * display:
+         *  table: 设置当前元素为<table>元素
+         *  table-cell: 设置当前元素为<td>元素（单元格), 可以使用 vertical-align 设置对齐方式
+         */
+        display: table-cell;
+
+        /**
+         * vertical-align 用于设置文本的垂直对齐方式
+         *  top
+         *  middle
+         *  bottom
+         */
+        vertical-align: middle;
+    }
+
+    .child {
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        居中布局
+        <div class="child"></div>
+    </div>
+</body>
+
+</html>

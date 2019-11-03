@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+    * 优点：解决了定宽元素浮动与自适应元素不浮动导致浏览器兼容性问题
+    *      自适应元素的子元素不能使用 clear: both
+    * 缺点：自适应元素的 margin 属性元素需要与定宽元素的宽度保持一致
+    *      实现复杂     
+    */
+    .left,
+    .right {
+        height: 300px;
+    }
+
+    .left {
+        /* 定宽 */
+        width: 300px;
+        background-color: #ff0000;
+
+        float: left;
+        /*设置显示层级更高，position 显示层级高于 float, 所以左列显示层级高于右列*/
+        /* position: relative; */
+    }
+
+    .right-fix {
+        float: right;
+        /*设置为浮动会导致默认宽度为0*/
+        width: 100%;
+        margin-left: -400px;
+        background-color: hotpink;
+    }
+
+    .right {
+        /* 会覆盖父类的 bgc */
+        background-color: #ccc;
+    }
+
+    /* .inner {
+        background-color: green;
+        height: 300px;
+        clear: both;
+    } */
+</style>
+
+<body>
+    <div class="left"></div>
+    <div class="right-fix">
+        <div class="right">
+            <div class="inner"></div>
+        </div>
+    </div>
+</body>
+
+</html>

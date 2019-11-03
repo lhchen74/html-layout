@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .parent, .parent2 {
+            /* column-count: 4;
+            column-width: 300px; */
+            columns: 4 300px;
+            column-gap: 20px;
+
+            /* column-rule-width: 5px;
+            column-rule-color: tomato;
+            column-rule-style: double; */
+
+            column-rule: 5px tomato double;
+        }
+
+        .col1, .col2, .col3, .col4, .col5 {
+            height: 300px;
+        }
+
+        .col1, .col6 {
+            background-color: hotpink;
+        }
+        .col2, .col7 {
+            background-color: lightblue;
+        }
+        .col3, .col8 {
+            background-color: green;
+        }
+        .col4, .col9 {
+            background-color: yellow;
+        }
+
+        .col5 {
+            background-color:darkblue;
+
+            /* 横跨所有列 ???*/
+            column-span: all;
+        }
+
+
+        .col6, .col7, .col8, .col9 {
+            column-fill: balance;  /* 以内容最多的作为显示高度，chrome 不支持*/
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="col1"></div>
+        <div class="col2"></div>
+        <div class="col3"></div>
+        <div class="col4"></div>   
+    </div>
+
+    <div class="parent2">
+        <div class="col5"></div>
+    </div>
+
+    <div class="parent">
+        <div class="col6">变量和常量是编程中必不可少的部分，也是很好理解的一部分。</div>
+        <div class="col7">变量和常量是编程中必不可少的部分，也是很好理解的一部分。变量和常量是编程中必不可少的部分，也是很好理解的一部分。变量和常量是编程中必不可少的部分，也是很好理解的一部分。变量和常量是编程中必不可少的部分，也是很好理解的一部分。</div>
+        <div class="col8">变量和常量是编程中必不可少的部分，也是很好理解的一部分。</div>
+        <div class="col9">变量和常量是编程中必不可少的部分，也是很好理解的一部分。</div>   
+    </div>
+</body>
+</html>

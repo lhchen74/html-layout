@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /**
+     * 缺点: center 页面核心元素放在最下面，不利于搜索引擎搜索，搜索引擎按照页面顺序搜索
+     */
+    .left,
+    .center,
+    .right {
+        height: 300px;
+    }
+
+    .left,
+    .right {
+        width: 300px;
+    }
+
+    .left {
+        background-color: #ff0000;
+
+        float: left;
+    }
+
+    .center {
+        background-color: green;
+
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+
+    .right {
+        background-color: #ccc;
+
+        float: right;
+    }
+</style>
+
+<body>
+    <div class="left"></div>
+    <!-- 
+    <div class="center"></div>
+    浮动元素放在非浮动元素的后面，浮动元素会换行
+    <div class="right"></div> 
+    -->
+    
+
+    <!--float 元素放在前面-->
+    <div class="right"></div>
+    <div class="center"></div>
+    
+</body>
+
+</html>

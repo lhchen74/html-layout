@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        height: 300px;
+    }
+
+    .left,
+    .center,
+    .right {
+        height: 300px;
+        float: left;
+    }
+
+    .left,
+    .right {
+        width: 300px;
+    }
+
+    .left {
+        background-color: #ff0000;
+        
+        /* 将当前元素从当前行移动到上一行同一个位置 */
+        margin-left: -100%;
+
+       
+    }
+
+    .center {
+        /* div 默认宽度是父级元素的 100%, 设置 float 后会失效，
+           没有设置宽度，默认宽度就为 0 */
+        width: 100%;
+        background-color: green;
+    }
+
+    .right {
+        background-color: #ccc;
+        /* 将当前元素从当前行移动到上一行 center 最右边
+           当前元素的最左边边和 center 最右边重合，因为 parent 没有设置 margin-right: 300px*/
+        margin-left: -300px;
+    }
+
+
+    .inner {
+        height: 300px;
+        background-color: hotpink;
+
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="center">
+            <div class="inner"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div> 
+    </div>
+</body>
+
+</html>
