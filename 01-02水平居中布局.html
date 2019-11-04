@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      /**
+       * 优点：只需要对子级元素进行设置就可以实现水平方向居中布局效果
+       * 缺点：如果子级元素脱离文档流，会导致 margin 属性值无效
+       * 元素脱离文档流：float, absolute(绝对定位), fixed(固定定位))
+       */
+      .parent {
+        width: 100%;
+        height: 200px;
+        background-color: #ccc;
+      }
+
+      .child {
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+
+        /**
+         * display 的值为 table 或 block, 不能为 inline 或者 inline-block
+         * div display 默认为 block, 这里可以省略
+         */
+        display: block;
+
+        /**
+         * margin 属性：外边距
+         * - 一个值：上右下左
+         * - 两个值：第一个表示上下，第二个表示左右
+             auto 表示根据浏览器自动分配，浏览器会平均分配
+         * - 三个值：第一个表示上，第二个表示左右，第三个表示下
+         * - 四个值：第一个表示上，第二个表示右，第三个表示下，第四个表示左
+         */
+        margin: 0 auto;
+
+        /**
+         * 如果子级元素脱离文档流，会导致 margin 属性值无效
+         * 元素脱离文档流：float, absolute(绝对定位), fixed(固定定位))
+         */
+        /* position: absolute;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">水平居中</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      /**
+       * 优点：浏览器兼容性好
+       * 缺点：text-align 属性具有继承性，导致子元素的文本也是居中显示
+       */
+      .parent {
+        width: 100%;
+        height: 200px;
+        background-color: #ccc;
+
+        /**
+         * text-align: 是为文本设置对齐方式
+         * - left
+         * - center
+         * - right
+         */
+        text-align: center;
+      }
+
+      .child {
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+
+        /**
+         * display 属性:
+         * - block: 块级元素
+         * - inline: 内联元素(text-align属性有效)
+         *   width 和 height 属性无效
+         * - inline-block: 行内块级元素(块级 + 内联)
+         *   width 和 height 以及 text-align 属性有效
+         */
+        display: inline-block;
+        /**
+         * text-align 属性具有继承性，child 会继承 parent 的 text-align: center
+         * 如果需要 chid 的子元素居左对齐，需要使用  text-align: left; 覆盖
+         */
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">居中布局,文字居左</div>
+    </div>
+  </body>
+</html>
